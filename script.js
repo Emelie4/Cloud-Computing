@@ -4,8 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const expenseList = document.getElementById("expense-list");
     const totalAmount = document.getElementById("total-amount");
     const filterCategory = document.getElementById("filter-category");
+    const budgetInput = document.getElementById("budget");
 
     let expenses = [];
+    let budget = 0;
+
+    budgetInput.addEventListener("input", (e) => {
+        budget = parseFloat(e.target.value);
+        updateTotalAmount();
+    });
 
     expenseForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -86,5 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateTotalAmount() {
         const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
         totalAmount.textContent = total.toFixed(2);
+
+        if (budget > 0 && total > budget) {
+            totalAmount.style.color = "red";
+        } else {
+            totalAmount.style.color = "black";
+        }
     }
 });

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expensetracker-deployment
+  labels:
+    app: expensetracker
+spec:
+  replicas: 3  # Number of pod replicas
+  selector:
+    matchLabels:
+      app: expensetracker
+  template:
+    metadata:
+      labels:
+        app: expensetracker
+    spec:
+      containers:
+      - name: expensetracker
+        image: emelie57/expensetracker:latest  # Your Docker image
+        ports:
+        - containerPort: 8080

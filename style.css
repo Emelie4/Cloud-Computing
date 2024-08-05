@@ -78,3 +78,19 @@ form button:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+.budget-setting {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.budget-setting label {
+    margin-right: 10px;
+}
+
+.budget-setting input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
