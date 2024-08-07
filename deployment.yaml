@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: expensetracker
-        image: emelie57/expensetracker:latest  # Your Docker image
+        image: emelie57/expensetracker:latest  
         ports:
         - containerPort: 8080
